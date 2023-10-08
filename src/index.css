@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/credit-card');
+@import url('https://fonts.cdnfonts.com/css/best-signature-font');
 
 body {
   margin: 0;
@@ -46,14 +47,38 @@ code {
 
 .form-color {
   font-size: 1.2rem;
-
 }
 
-#card {
-  color: white;
+.flip-card {
+  perspective: 1000px;
+  background-color: transparent;
   width: 30rem;
   height: 19rem;
+}
+
+.flip-card-content {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card:active .flip-card-content {
+  transform: rotateY(180deg);
+}
+
+#front, #back {
   border-radius: 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#back {
+  transform: rotateY(180deg);
 }
 
 .card-bank {
@@ -73,8 +98,17 @@ code {
 
 .card-number {
   position: relative;
-  top: 7rem;
+  top: 8rem;
   left: 1rem;
+  font-size: 1.5rem;
+  font-family: 'Credit Card', sans-serif;
+}
+
+.card-number-reversed {
+  position: relative;
+  top: 5rem;
+  right: 1rem;
+  transform: rotateY(180deg);
   font-size: 1.5rem;
   font-family: 'Credit Card', sans-serif;
 }
@@ -90,4 +124,34 @@ code {
 
 .card-name {
   margin-right: 1.5rem;
+}
+
+.black-stripe {
+  position: relative;
+  top: 1.5rem;
+  width: 100%;
+  height: 3.5rem;
+  background-color: black;
+}
+
+.white-stripe {
+  background-color: azure;
+  width: 60%;
+  height: 3.5rem;
+  position: relative;
+  top: 3.5rem;
+  left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.signature {
+  font-family: 'Best Signature Font', sans-serif;
+  font-size: 2rem;
+}
+
+.cvv {
+  font-size: 1.2rem;
 }
