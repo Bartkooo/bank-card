@@ -44,7 +44,7 @@ function App() {
             <div className="flip-card">
               <div className="flip-card-content">
                 <div id="front">
-                  <div className="card-bank">Bank</div>
+                  <div className="card-bank">Test Bank</div>
                   <img src="chip.png" className="card-chip" alt=""></img>
                   <div className="card-number">{number}</div>
                   <div className="card-user">
